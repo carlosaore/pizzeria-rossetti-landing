@@ -39,6 +39,7 @@ const closeModal = () => {
     <img
         id="hero-pizza"
         src="src/assets/hero-pizza.jpg"
+        alt="Pizza"
     />
     <div
         class="container"

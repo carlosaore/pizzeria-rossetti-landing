@@ -28,7 +28,9 @@ const redirectToFacebook = () => {
                        @click="changePage('home')"
                     >
                         <img src="http://pizzeriarossettimanises.com/wp-content/uploads/2019/04/Logotiporossetti_Mesa-de-trabajo-1.jpg"
-                             width="212">
+                             width="212"
+                            alt="Pizzeria Rossetti Manises"
+                        >
                     </a>
                 </div>
 
