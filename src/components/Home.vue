@@ -56,9 +56,7 @@ const closeModal = () => {
             <p class="has-text-centered">Los más vendidos</p>
             <div class="columns mt-6">
                 <div class="column is-half">
-                    <div class="box pizza-item"
-                         @click="handleClickPizza('gorroma')"
-                    >
+                    <div class="box pizza-item" @click="handleClickPizza('gorroma')">
                         <p class="mb-0">
                             GORROMA
                         </p>
@@ -67,9 +65,7 @@ const closeModal = () => {
                             Ingredientes: Tomate, mozzarella, salami a la pimienta, scamorza, provolone y salsa picante
                         </p>
                     </div>
-                    <div class="box pizza-item"
-                         @click="handleClickPizza('Sicilia')"
-                    >
+                    <div class="box pizza-item" @click="handleClickPizza('Sicilia')">
                         <p class="mb-0">
                             Sicilia
                         </p>
@@ -80,9 +76,7 @@ const closeModal = () => {
                     </div>
                 </div>
                 <div class="column is-half">
-                    <div class="box pizza-item"
-                         @click="handleClickPizza('napoli')"
-                    >
+                    <div class="box pizza-item" @click="handleClickPizza('napoli')">
                         <p class="mb-0">
                             Napoli
                         </p>
@@ -91,9 +85,7 @@ const closeModal = () => {
                             Ingredientes: Tomate, mozzarella, salami a la pimienta, scamorza, provolone y salsa picante
                         </p>
                     </div>
-                    <div class="box pizza-item"
-                         @click="handleClickPizza('margarita')"
-                    >
+                    <div class="box pizza-item" @click="handleClickPizza('margarita')">
                         <p class="mb-0">
                             Margarita
                         </p>
@@ -106,22 +98,17 @@ const closeModal = () => {
             </div>
         </div>
     </div>
-    <div class="modal"
-         :class="{ 'is-active': isModalActive }"
-    >
-        <div class="modal-background"
-             @click="closeModal"
-        ></div>
+    <div class="modal" :class="{ 'is-active': isModalActive }">
+        <div class="modal-background" @click="closeModal" ></div>
         <div class="modal-content">
             <p class="image is-4by3">
                 <img
                     :src="selectedPizzaHref"
-                    alt="">
+                    alt=""
+                >
             </p>
         </div>
-        <button class="modal-close is-large" aria-label="close"
-                @click="closeModal"
-        ></button>
+        <button class="modal-close is-large" aria-label="close" @click="closeModal"></button>
     </div>
 </template>
 

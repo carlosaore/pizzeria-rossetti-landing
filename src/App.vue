@@ -7,14 +7,21 @@ import FacebookIcon from "./components/FacebookIcon.vue";
 
 const currentPage = ref('home');
 
+const menuIsActive = ref(false);
+
 const changePage = (page) => {
-	currentPage.value = page;
-	console.log(currentPage.value);
+    currentPage.value = page;
+    console.log(currentPage.value);
 }
 
 const redirectToFacebook = () => {
-  const url = "https://www.facebook.com/pizzeriarossetti?mibextid=ZbWKwL";
-  window.open(url, "_blank", "noopener,noreferrer");
+    const url = "https://www.facebook.com/pizzeriarossetti?mibextid=ZbWKwL";
+    window.open(url, "_blank", "noopener,noreferrer");
+}
+
+const redirectToGlovo = () => {
+    const url = "https://glovoapp.com/es/es/valencia/pizzeria-rossetti-valencia/"
+    window.open(url, "_blank", "noopener,noreferrer");
 }
 
 </script>
@@ -22,75 +29,88 @@ const redirectToFacebook = () => {
 <template>
     <div id="root-content">
 
-            <nav aria-label="main navigation" class="navbar" role="navigation">
-                <div class="navbar-brand">
-                    <a class="navbar-item"
-                       @click="changePage('home')"
+        <nav aria-label="main navigation" class="navbar is-fixed-top" role="navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item"
+                   @click="changePage('home')"
+                >
+                    <img
+                        src="http://pizzeriarossettimanises.com/wp-content/uploads/2019/04/Logotiporossetti_Mesa-de-trabajo-1.jpg"
+                        width="212"
+                        alt="Pizzeria Rossetti Manises"
                     >
-                        <img src="http://pizzeriarossettimanises.com/wp-content/uploads/2019/04/Logotiporossetti_Mesa-de-trabajo-1.jpg"
-                             width="212"
-                            alt="Pizzeria Rossetti Manises"
-                        >
-                    </a>
-                </div>
+                </a>
+                <a
+                    role="button"
+                    class="navbar-burger"
+                    aria-label="menu"
+                    aria-expanded="false"
+                    @click="menuIsActive = !menuIsActive"
+                   :class="{'is-active': menuIsActive}"
+                >
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
 
-                <div id="navbarBasicExample" class="navbar-menu">
-                    <div class="navbar-start">
-                        <a
-                            class="navbar-item"
-                        >
+            <div class="navbar-menu" :class="{'is-active': menuIsActive}">
+                <div class="navbar-start">
+                    <a
+                        class="navbar-item"
+                    >
                               <span class="icon"
                                     @click="redirectToFacebook"
                               >
                                   <FacebookIcon />
                               </span>
-                        </a>
-                        <a
-                            class="navbar-item"
-                            @click="changePage('carta')"
-                        >
-                            Carta
-                        </a>
-                        <a class="navbar-item"
-                           @click="changePage('nuestra-esencia')"
-                        >
-                            Nuestra esencia
-                        </a>
-                        <a
-                            class="navbar-item"
-                            @click="changePage('contacto')"
-                        >
-                            Contacto
-                        </a>
-                    </div>
+                    </a>
+                    <a
+                        class="navbar-item"
+                        @click="changePage('carta')"
+                    >
+                        Carta
+                    </a>
+                    <a class="navbar-item"
+                       @click="changePage('nuestra-esencia')"
+                    >
+                        Nuestra esencia
+                    </a>
+                    <a
+                        class="navbar-item"
+                        @click="changePage('contacto')"
+                    >
+                        Contacto
+                    </a>
+                </div>
 
-                    <div class="navbar-end">
-                        <div class="navbar-item">
-                            <div class="buttons">
-                                <a class="button is-primary">
-                                    <strong>Comprar por Glovo</strong>
-                                </a>
-                            </div>
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <div class="buttons" id="glovo">
+                            <a class="button is-primary" @click="redirectToGlovo">
+                                <strong>Comprar por Glovo</strong>
+                            </a>
                         </div>
                     </div>
                 </div>
-            </nav>
+            </div>
+        </nav>
         <div class="content current-page">
             <Home
-                    v-if="currentPage === 'home'"
+                v-if="currentPage === 'home'"
             />
             <p
-                    v-if="currentPage === 'carta'"
+                v-if="currentPage === 'carta'"
             >
                 Carta
             </p>
             <p
-                    v-if="currentPage === 'nuestra-esencia'"
+                v-if="currentPage === 'nuestra-esencia'"
             >
                 Nuestra esencia
             </p>
             <p
-                    v-if="currentPage === 'contacto'"
+                v-if="currentPage === 'contacto'"
             >
                 Contacto
             </p>
@@ -132,4 +152,14 @@ body {
     flex-grow: 1;
 }
 
+/* small customizations to have the items centered on mobile */
+@media all and (max-width: 1024px) {
+    .navbar-item {
+        text-align: center;
+    }
+
+    #glovo {
+        justify-content: center;
+    }
+}
 </style>
