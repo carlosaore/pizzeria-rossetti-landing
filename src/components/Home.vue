@@ -6,15 +6,15 @@ const selectedPizzaHref = ref("src/assets/margarita.jpg");
 
 const handleClickPizza = (selectedPizza) => {
     if (selectedPizza === 'margarita') {
-        selectedPizzaHref.value = "src/assets/margarita.jpg";
+        selectedPizzaHref.value = "/src/assets/margarita.jpg";
     } else if (selectedPizza === 'napoli') {
-        selectedPizzaHref.value = "src/assets/hero-pizza.jpg";
+        selectedPizzaHref.value = "/src/assets/hero-pizza.jpg";
     } else if (selectedPizza === 'Sicilia') {
-        selectedPizzaHref.value = "src/assets/hero-pizza.jpg";
+        selectedPizzaHref.value = "/src/assets/hero-pizza.jpg";
     } else if (selectedPizza === 'gorroma') {
         selectedPizzaHref.value = "src/assets/hero-pizza.jpg";
     } else {
-        selectedPizzaHref.value = "src/assets/margarita.jpg";
+        selectedPizzaHref.value = "/src/assets/margarita.jpg";
     }
     isModalActive.value = true;
 }
@@ -38,7 +38,7 @@ const closeModal = () => {
     </section>
     <img
         id="hero-pizza"
-        src="src/assets/hero-pizza.jpg"
+        src="/src/assets/hero-pizza.jpg"
         alt="Pizza"
     />
     <div

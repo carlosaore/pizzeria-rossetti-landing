@@ -21,7 +21,7 @@ const redirectToFacebook = () => {
 
 <template>
     <div id="root-content">
-        <div class="main-content">
+
             <nav aria-label="main navigation" class="navbar" role="navigation">
                 <div class="navbar-brand">
                     <a class="navbar-item"
@@ -75,7 +75,6 @@ const redirectToFacebook = () => {
                     </div>
                 </div>
             </nav>
-        </div>
         <div class="content current-page">
             <Home
                     v-if="currentPage === 'home'"
@@ -100,13 +99,33 @@ const redirectToFacebook = () => {
     </div>
 </template>
 
-<style scoped>
+<style>
+body {
+    background-color: #f2f2f2;
+}
+
 #root-content {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     width: min(100vw, 1200px);
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+#root-content:before{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("/src/assets/background.jpg");
+    background-size: 40rem;
+    opacity: 0.1;
+    background-repeat: repeat;
 }
 
 .current-page {
