@@ -1,20 +1,51 @@
 <script setup>
 import { ref } from "vue";
+import PizzaCard from "./PizzaCard.vue";
 
 const isModalActive = ref(false);
-const selectedPizzaHref = ref("src/assets/margarita.jpg");
+const selectedPizza = ref({
+    src: "src/assets/margarita.jpg",
+    pizzaTitle: "Maatgarita",
+    pizzaIngredients: "Ingredientes: Tomate, mozzarella, salami a la pimienta, scamorza, provolone y salsa picante",
+    pizzaPrice: "10,99"
+});
 
-const handleClickPizza = (selectedPizza) => {
-    if (selectedPizza === 'margarita') {
-        selectedPizzaHref.value = "/src/assets/margarita.jpg";
-    } else if (selectedPizza === 'napoli') {
-        selectedPizzaHref.value = "/src/assets/hero-pizza.jpg";
-    } else if (selectedPizza === 'Sicilia') {
-        selectedPizzaHref.value = "/src/assets/hero-pizza.jpg";
-    } else if (selectedPizza === 'gorroma') {
-        selectedPizzaHref.value = "src/assets/hero-pizza.jpg";
+const handleClickPizza = (selection) => {
+    if (selection === 'margarita') {
+        selectedPizza.value = {
+            src: "src/assets/margarita.jpg",
+            pizzaTitle: "Maatgarita",
+            pizzaIngredients: "Ingredientes: Tomate, mozzarella, salami a la pimienta, scamorza, provolone y salsa picante",
+            pizzaPrice: "10,99"
+        };
+    } else if (selection === 'napoli') {
+        selectedPizza.value = {
+            src: "src/assets/margarita.jpg",
+            pizzaTitle: "Maatgarita",
+            pizzaIngredients: "Ingredientes: Tomate, mozzarella, salami a la pimienta, scamorza, provolone y salsa picante",
+            pizzaPrice: "10,99"
+        };
+    } else if (selection === 'Sicilia') {
+        selectedPizza.value = {
+            src: "src/assets/margarita.jpg",
+            pizzaTitle: "Maatgarita",
+            pizzaIngredients: "Ingredientes: Tomate, mozzarella, salami a la pimienta, scamorza, provolone y salsa picante",
+            pizzaPrice: "10,99"
+        };
+    } else if (selection === 'gorroma') {
+        selectedPizza.value = {
+            src: "src/assets/margarita.jpg",
+            pizzaTitle: "Maatgarita",
+            pizzaIngredients: "Ingredientes: Tomate, mozzarella, salami a la pimienta, scamorza, provolone y salsa picante",
+            pizzaPrice: "10,99"
+        };
     } else {
-        selectedPizzaHref.value = "/src/assets/margarita.jpg";
+        selectedPizza.value = {
+            src: "src/assets/margarita.jpg",
+            pizzaTitle: "Maatgarita",
+            pizzaIngredients: "Ingredientes: Tomate, mozzarella, salami a la pimienta, scamorza, provolone y salsa picante",
+            pizzaPrice: "10,99"
+        };
     }
     isModalActive.value = true;
 }
@@ -101,12 +132,12 @@ const closeModal = () => {
     <div class="modal" :class="{ 'is-active': isModalActive }">
         <div class="modal-background" @click="closeModal" ></div>
         <div class="modal-content">
-            <p class="image is-4by3">
-                <img
-                    :src="selectedPizzaHref"
-                    alt=""
-                >
-            </p>
+            <PizzaCard
+                :src="selectedPizza.src"
+                :pizza-ingredients="selectedPizza.pizzaIngredients"
+                :pizza-title="selectedPizza.pizzaTitle"
+                :pizza-price="selectedPizza.pizzaPrice"
+             />
         </div>
         <button class="modal-close is-large" aria-label="close" @click="closeModal"></button>
     </div>

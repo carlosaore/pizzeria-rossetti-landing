@@ -4,6 +4,8 @@ import {ref} from "vue";
 import Home from "./components/Home.vue";
 import Footer from "./components/Footer.vue";
 import FacebookIcon from "./components/FacebookIcon.vue";
+import Carta from "./components/Carta.vue";
+import NuestraEsencia from "./components/NuestraEsencia.vue";
 
 const currentPage = ref('home');
 
@@ -99,16 +101,12 @@ const redirectToGlovo = () => {
             <Home
                 v-if="currentPage === 'home'"
             />
-            <p
-                v-if="currentPage === 'carta'"
-            >
-                Carta
-            </p>
-            <p
-                v-if="currentPage === 'nuestra-esencia'"
-            >
-                Nuestra esencia
-            </p>
+            <Carta
+                    v-if="currentPage === 'carta'"
+            />
+            <NuestraEsencia
+                    v-if="currentPage === 'nuestra-esencia'"        
+            />
             <p
                 v-if="currentPage === 'contacto'"
             >
