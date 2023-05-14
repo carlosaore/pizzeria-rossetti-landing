@@ -6,6 +6,7 @@ import Footer from "./components/Footer.vue";
 import FacebookIcon from "./components/FacebookIcon.vue";
 import Carta from "./components/Carta.vue";
 import NuestraEsencia from "./components/NuestraEsencia.vue";
+import ContactForm from "./components/ContactForm.vue";
 
 const currentPage = ref('home');
 
@@ -107,11 +108,9 @@ const redirectToGlovo = () => {
             <NuestraEsencia
                     v-if="currentPage === 'nuestra-esencia'"        
             />
-            <p
-                v-if="currentPage === 'contacto'"
-            >
-                Contacto
-            </p>
+            <ContactForm
+                    v-if="currentPage === 'contacto'"
+            />
         </div>
         <Footer/>
     </div>

@@ -103,6 +103,7 @@ const closeModal = () => {
                         <p class="mb-0">8,90€</p>
                         <p class="ingredients">
                             Ingredientes: Tomate, mozzarella, pepperoni, bacon y cebolla
+
                         </p>
                     </div>
                 </div>
@@ -113,7 +114,7 @@ const closeModal = () => {
                         </p>
                         <p class="mb-0">10,50€</p>
                         <p class="ingredients">
-                            Ingredientes: Tomate, mozzarella, roquefort, emental, carne, cebolla, huevo y parmesano
+                            Ingredientes: Tomate, mozzarella, roquefort, carne y parmesano
                         </p>
                     </div>
                     <div class="box pizza-item" @click="handleClickPizza('margarita')">
@@ -124,14 +125,20 @@ const closeModal = () => {
                         <p class="ingredients">
                             Ingredientes: Tomate, mozzarella, oregano
                         </p>
+
                     </div>
+
                 </div>
+
             </div>
+            <button class="button" @click="handleClickButton('margarita')">Consulta nuestra carta</button>
         </div>
+
     </div>
+
     <div class="modal" :class="{ 'is-active': isModalActive }">
         <div class="modal-background" @click="closeModal" ></div>
-        <div class="modal-content">
+        <div class="modal-content p-6">
             <PizzaCard
                 :src="selectedPizza.src"
                 :pizza-ingredients="selectedPizza.pizzaIngredients"
@@ -139,14 +146,16 @@ const closeModal = () => {
                 :pizza-price="selectedPizza.pizzaPrice"
              />
         </div>
+
         <button class="modal-close is-large" aria-label="close" @click="closeModal"></button>
+
     </div>
 </template>
 
 <style scoped>
 #hero-pizza {
     width: 100%;
-    height: min(30vh, 400px);
+    height: min(35vh, 400px);
     object-fit: cover;
     object-position: 0 20%;
 }
@@ -162,5 +171,9 @@ const closeModal = () => {
 
 .pizza-item:hover {
     transform: scale(1.05);
+}
+
+.modal-content {
+    overflow-y: hidden;
 }
 </style>
