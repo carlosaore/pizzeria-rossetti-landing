@@ -4,47 +4,47 @@ import PizzaCard from "./PizzaCard.vue";
 
 const isModalActive = ref(false);
 const selectedPizza = ref({
-    src: "src/assets/margarita.jpg",
-    pizzaTitle: "Maatgarita",
-    pizzaIngredients: "Ingredientes: Tomate, mozzarella, salami a la pimienta, scamorza, provolone y salsa picante",
-    pizzaPrice: "10,99"
+    src: "src/assets/quattro-formaggi.jpg",
+    pizzaTitle: "QUATTRO FORMAGGI",
+    pizzaIngredients: "Ingredientes: Tomate, mozzarella, emental, roquefort y parmesano",
+    pizzaPrice: "9,90"
 });
 
 const handleClickPizza = (selection) => {
-    if (selection === 'margarita') {
+    if (selection === 'quattro-formaggi') {
         selectedPizza.value = {
-            src: "src/assets/margarita.jpg",
-            pizzaTitle: "Maatgarita",
-            pizzaIngredients: "Ingredientes: Tomate, mozzarella, salami a la pimienta, scamorza, provolone y salsa picante",
-            pizzaPrice: "10,99"
+            src: "src/assets/quattro-formaggi.jpg",
+            pizzaTitle: "QUATTRO FORMAGGI",
+            pizzaIngredients: "Ingredientes: Tomate, mozzarella, emental, roquefort y parmesano",
+            pizzaPrice: "8,90"
         };
-    } else if (selection === 'napoli') {
+    } else if (selection === 'cosa-nostra') {
         selectedPizza.value = {
-            src: "src/assets/margarita.jpg",
-            pizzaTitle: "Maatgarita",
-            pizzaIngredients: "Ingredientes: Tomate, mozzarella, salami a la pimienta, scamorza, provolone y salsa picante",
-            pizzaPrice: "10,99"
+            src: "src/assets/cosa-nostra.jpg",
+            pizzaTitle: "COSA NOSTRA",
+            pizzaIngredients: "Ingredientes: Tomate, mozzarella, pepperoni, bacon y cebolla",
+            pizzaPrice: "8,90"
         };
-    } else if (selection === 'Sicilia') {
+    } else if (selection === 'deliziosa') {
         selectedPizza.value = {
-            src: "src/assets/margarita.jpg",
-            pizzaTitle: "Maatgarita",
+            src: "src/assets/deliziosa.jpg",
+            pizzaTitle: "DELIZIOSA",
             pizzaIngredients: "Ingredientes: Tomate, mozzarella, salami a la pimienta, scamorza, provolone y salsa picante",
-            pizzaPrice: "10,99"
+            pizzaPrice: "10,50"
         };
-    } else if (selection === 'gorroma') {
+    } else if (selection === 'margarita') {
         selectedPizza.value = {
             src: "src/assets/margarita.jpg",
-            pizzaTitle: "Maatgarita",
+            pizzaTitle: "MARGARITA",
             pizzaIngredients: "Ingredientes: Tomate, mozzarella, salami a la pimienta, scamorza, provolone y salsa picante",
-            pizzaPrice: "10,99"
+            pizzaPrice: "6,50"
         };
     } else {
         selectedPizza.value = {
             src: "src/assets/margarita.jpg",
-            pizzaTitle: "Maatgarita",
-            pizzaIngredients: "Ingredientes: Tomate, mozzarella, salami a la pimienta, scamorza, provolone y salsa picante",
-            pizzaPrice: "10,99"
+            pizzaTitle: "MARGARITA",
+            pizzaIngredients: "Ingredientes: Tomate, mozzarella, oregano",
+            pizzaPrice: "6,50€"
         };
     }
     isModalActive.value = true;
@@ -81,48 +81,48 @@ const closeModal = () => {
             </p>
         </div>
         <div class="my-6 px-6">
-            <p class="title is-3 has-text-centered mb-2">
+            <p class="title is-4 has-text-centered mb-2">
                 Nuestra carta
             </p>
             <p class="has-text-centered">Los más vendidos</p>
             <div class="columns mt-6">
                 <div class="column is-half">
-                    <div class="box pizza-item" @click="handleClickPizza('gorroma')">
+                    <div class="box pizza-item" @click="handleClickPizza('quattro-formaggi')">
                         <p class="mb-0">
-                            GORROMA
+                            QUATTRO FORMAGGI
                         </p>
-                        <p class="mb-0">10,90€</p>
+                        <p class="mb-0">8,90€</p>
                         <p class="ingredients">
-                            Ingredientes: Tomate, mozzarella, salami a la pimienta, scamorza, provolone y salsa picante
+                            Ingredientes: Tomate, mozzarella, emental, roquefort y parmesano
                         </p>
                     </div>
-                    <div class="box pizza-item" @click="handleClickPizza('Sicilia')">
+                    <div class="box pizza-item" @click="handleClickPizza('cosa-nostra')">
                         <p class="mb-0">
-                            Sicilia
+                            COSA NOSTRA
                         </p>
-                        <p class="mb-0">10,90€</p>
+                        <p class="mb-0">8,90€</p>
                         <p class="ingredients">
-                            Ingredientes: Tomate, mozzarella, salami a la pimienta, scamorza, provolone y salsa picante
+                            Ingredientes: Tomate, mozzarella, pepperoni, bacon y cebolla
                         </p>
                     </div>
                 </div>
                 <div class="column is-half">
-                    <div class="box pizza-item" @click="handleClickPizza('napoli')">
+                    <div class="box pizza-item" @click="handleClickPizza('deliziosa')">
                         <p class="mb-0">
-                            Napoli
+                            DELIZIOSA
                         </p>
-                        <p class="mb-0">10,90€</p>
+                        <p class="mb-0">10,50€</p>
                         <p class="ingredients">
-                            Ingredientes: Tomate, mozzarella, salami a la pimienta, scamorza, provolone y salsa picante
+                            Ingredientes: Tomate, mozzarella, roquefort, emental, carne, cebolla, huevo y parmesano
                         </p>
                     </div>
                     <div class="box pizza-item" @click="handleClickPizza('margarita')">
                         <p class="mb-0">
-                            Margarita
+                            MARGARITA
                         </p>
-                        <p class="mb-0">10,90€</p>
+                        <p class="mb-0">6,50€</p>
                         <p class="ingredients">
-                            Ingredientes: Tomate, mozzarella, salami a la pimienta, scamorza, provolone y salsa picante
+                            Ingredientes: Tomate, mozzarella, oregano
                         </p>
                     </div>
                 </div>
