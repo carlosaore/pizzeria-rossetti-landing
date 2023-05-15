@@ -1,24 +1,22 @@
-<script setup>
-
-</script>
+<script setup></script>
 <template>
   <div class="field">
     <label class="label">Name</label>
     <div class="control">
-      <input class="input" placeholder="Text input" type="text">
+      <input class="input" placeholder="Text input" type="text" />
     </div>
   </div>
 
   <div class="field">
     <label class="label">Email</label>
     <div class="control has-icons-left has-icons-right">
-      <input class="input is-danger" placeholder="Email input" type="email" value="hello@">
+      <input class="input is-danger" placeholder="Email input" type="email" value="hello@" />
       <span class="icon is-small is-left">
-      <i class="fas fa-envelope"></i>
-    </span>
+        <i class="fas fa-envelope"></i>
+      </span>
       <span class="icon is-small is-right">
-      <i class="fas fa-exclamation-triangle"></i>
-    </span>
+        <i class="fas fa-exclamation-triangle"></i>
+      </span>
     </div>
     <p class="help is-danger">This email is invalid</p>
   </div>
@@ -45,7 +43,7 @@
   <div class="field">
     <div class="control">
       <label class="checkbox">
-        <input type="checkbox">
+        <input type="checkbox" />
         I agree to the <a href="#">terms and conditions</a>
       </label>
     </div>
@@ -54,11 +52,11 @@
   <div class="field">
     <div class="control">
       <label class="radio">
-        <input name="question" type="radio">
+        <input name="question" type="radio" />
         Yes
       </label>
       <label class="radio">
-        <input name="question" type="radio">
+        <input name="question" type="radio" />
         No
       </label>
     </div>

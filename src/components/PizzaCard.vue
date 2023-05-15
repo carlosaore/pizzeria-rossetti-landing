@@ -3,15 +3,14 @@ const props = defineProps({
   src: String,
   pizzaTitle: String,
   pizzaPrice: String,
-  pizzaIngredients: String
+  pizzaIngredients: String,
 });
-
 </script>
 
 <template>
   <div class="card">
     <div class="card-image">
-      <img :src="props.src" alt="Placeholder image" class="image">
+      <img :src="props.src" alt="Placeholder image" class="image" />
     </div>
     <div class="card-content">
       <div class="content">
@@ -21,14 +20,13 @@ const props = defineProps({
       </div>
     </div>
   </div>
-
 </template>
 
 <style scoped>
 .image {
-    height: auto;
-    max-height: 50vh;
-    width: 100%;
-    object-fit: cover;
+  height: auto;
+  max-height: 50vh;
+  width: 100%;
+  object-fit: cover;
 }
 </style>
