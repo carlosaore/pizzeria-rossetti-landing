@@ -1,6 +1,6 @@
 <script setup>
 
-import {ref} from "vue";
+import { ref } from "vue";
 import Home from "./components/Home.vue";
 import Footer from "./components/Footer.vue";
 import FacebookIcon from "./components/FacebookIcon.vue";
@@ -8,112 +8,112 @@ import Carta from "./components/Carta.vue";
 import NuestraEsencia from "./components/NuestraEsencia.vue";
 import ContactForm from "./components/ContactForm.vue";
 
-const currentPage = ref('home');
+const currentPage = ref("home");
 
 const menuIsActive = ref(false);
 
 const changePage = (page) => {
-    currentPage.value = page;
-    console.log(currentPage.value);
-}
+  currentPage.value = page;
+  console.log(currentPage.value);
+};
 
 const redirectToFacebook = () => {
-    const url = "https://www.facebook.com/pizzeriarossetti?mibextid=ZbWKwL";
-    window.open(url, "_blank", "noopener,noreferrer");
-}
+  const url = "https://www.facebook.com/pizzeriarossetti?mibextid=ZbWKwL";
+  window.open(url, "_blank", "noopener,noreferrer");
+};
 
 const redirectToGlovo = () => {
-    const url = "https://glovoapp.com/es/es/valencia/pizzeria-rossetti-valencia/"
-    window.open(url, "_blank", "noopener,noreferrer");
-}
+  const url = "https://glovoapp.com/es/es/valencia/pizzeria-rossetti-valencia/";
+  window.open(url, "_blank", "noopener,noreferrer");
+};
 
 </script>
 
 <template>
-    <div id="root-content">
+  <div id="root-content">
 
-        <nav aria-label="main navigation" class="navbar is-fixed-top" role="navigation">
-            <div class="navbar-brand">
-                <a class="navbar-item"
-                   @click="changePage('home')"
-                >
-                    <img
-                        src="http://pizzeriarossettimanises.com/wp-content/uploads/2019/04/Logotiporossetti_Mesa-de-trabajo-1.jpg"
-                        width="212"
-                        alt="Pizzeria Rossetti Manises"
-                    >
-                </a>
-                <a
-                    role="button"
-                    class="navbar-burger"
-                    aria-label="menu"
-                    aria-expanded="false"
-                    @click="menuIsActive = !menuIsActive"
-                   :class="{'is-active': menuIsActive}"
-                >
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                </a>
-            </div>
+    <nav aria-label="main navigation" class="navbar is-fixed-top" role="navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item"
+           @click="changePage('home')"
+        >
+          <img
+            alt="Pizzeria Rossetti Manises"
+            src="http://pizzeriarossettimanises.com/wp-content/uploads/2019/04/Logotiporossetti_Mesa-de-trabajo-1.jpg"
+            width="212"
+          >
+        </a>
+        <a
+          :class="{'is-active': menuIsActive}"
+          aria-expanded="false"
+          aria-label="menu"
+          class="navbar-burger"
+          role="button"
+          @click="menuIsActive = !menuIsActive"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
 
-            <div class="navbar-menu" :class="{'is-active': menuIsActive}">
-                <div class="navbar-start">
-                    <a
-                        class="navbar-item"
-                    >
+      <div :class="{'is-active': menuIsActive}" class="navbar-menu">
+        <div class="navbar-start">
+          <a
+            class="navbar-item"
+          >
                               <span class="icon"
                                     @click="redirectToFacebook"
                               >
                                   <FacebookIcon />
                               </span>
-                    </a>
-                    <a
-                        class="navbar-item"
-                        @click="changePage('carta')"
-                    >
-                        Carta
-                    </a>
-                    <a class="navbar-item"
-                       @click="changePage('nuestra-esencia')"
-                    >
-                        Nuestra esencia
-                    </a>
-                    <a
-                        class="navbar-item"
-                        @click="changePage('contacto')"
-                    >
-                        Contacto
-                    </a>
-                </div>
-
-                <div class="navbar-end">
-                    <div class="navbar-item">
-                        <div class="buttons" id="glovo">
-                            <a class="button is-primary" @click="redirectToGlovo">
-                                <strong>Comprar por Glovo</strong>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </nav>
-        <div class="content current-page">
-            <Home
-                v-if="currentPage === 'home'"
-            />
-            <Carta
-                    v-if="currentPage === 'carta'"
-            />
-            <NuestraEsencia
-                    v-if="currentPage === 'nuestra-esencia'"        
-            />
-            <ContactForm
-                    v-if="currentPage === 'contacto'"
-            />
+          </a>
+          <a
+            class="navbar-item"
+            @click="changePage('carta')"
+          >
+            Carta
+          </a>
+          <a class="navbar-item"
+             @click="changePage('nuestra-esencia')"
+          >
+            Nuestra esencia
+          </a>
+          <a
+            class="navbar-item"
+            @click="changePage('contacto')"
+          >
+            Contacto
+          </a>
         </div>
-        <Footer/>
+
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div id="glovo" class="buttons">
+              <a class="button is-primary" @click="redirectToGlovo">
+                <strong>Comprar por Glovo</strong>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="content current-page">
+      <Home
+        v-if="currentPage === 'home'"
+      />
+      <Carta
+        v-if="currentPage === 'carta'"
+      />
+      <NuestraEsencia
+        v-if="currentPage === 'nuestra-esencia'"
+      />
+      <ContactForm
+        v-if="currentPage === 'contacto'"
+      />
     </div>
+    <Footer />
+  </div>
 </template>
 
 <style>
@@ -131,7 +131,7 @@ body {
     z-index: 1;
 }
 
-#root-content:before{
+#root-content:before {
     content: "";
     position: absolute;
     z-index: -1;

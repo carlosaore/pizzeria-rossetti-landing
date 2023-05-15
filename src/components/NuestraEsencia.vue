@@ -4,23 +4,25 @@
 </script>
 
 <template>
-<div class="content p-6 has-text-centered">
-  <h1>Nuestra historia</h1>
-  <p> Nuestra historia comienza hace más de 20 años, cuando Giovanni, un chef apasionado que creció en Nápoles,
-      decidió cumplir su sueño de toda la vida de abrir su propia pizzería. Rosseti se estableció en el corazón de la ciudad de Valencia,
+  <div class="content p-6 has-text-centered">
+    <h1>Nuestra historia</h1>
+    <p> Nuestra historia comienza hace más de 20 años, cuando Giovanni, un chef apasionado que creció en Nápoles,
+      decidió cumplir su sueño de toda la vida de abrir su propia pizzería. Rosseti se estableció en el corazón de
+      la ciudad de Valencia,
       con la misión de llevar la auténtica pizza de estilo napolitano a nuestra comunidad.
-      Giovanni se abastece de los ingredientes más frescos y utiliza técnicas tradicionales, para crear pizzas crujientes y llenas de sabor.</p>
-  <h2>Nuestra esencia</h2>
-    <div class="header-title-wrapper" id="header-title-wrapper-1">
-        <h3>Contamos con 20 años de historia y con tu preferencia seguiremos sumando.</h3>
+      Giovanni se abastece de los ingredientes más frescos y utiliza técnicas tradicionales, para crear pizzas
+      crujientes y llenas de sabor.</p>
+    <h2>Nuestra esencia</h2>
+    <div id="header-title-wrapper-1" class="header-title-wrapper">
+      <h3>Contamos con 20 años de historia y con tu preferencia seguiremos sumando.</h3>
     </div>
-    <div class="header-title-wrapper" id="header-title-wrapper-2">
-        <h3>Elaboramos nuestras pizzas con ingredientes 100% naturales.</h3>
+    <div id="header-title-wrapper-2" class="header-title-wrapper">
+      <h3>Elaboramos nuestras pizzas con ingredientes 100% naturales.</h3>
     </div>
-    <div class="header-title-wrapper" id="header-title-wrapper-3">
-        <h3>Disponemos de un tamaño único de pizza de 33 centímetros, con el que seguro queradarás satisfecho.</h3>
+    <div id="header-title-wrapper-3" class="header-title-wrapper">
+      <h3>Disponemos de un tamaño único de pizza de 33 centímetros, con el que seguro queradarás satisfecho.</h3>
     </div>
-</div>
+  </div>
 
 </template>
 <style>
