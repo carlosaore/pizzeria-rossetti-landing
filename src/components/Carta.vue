@@ -2,16 +2,15 @@
 
 <template>
   <div class="content p-6">
-    <h1>Nuestra carta</h1>
-    <p>
+    <h1 class="has-text-centered">Nuestra carta</h1>
+    <p class="p--intro">
       Nuestras pizzas son elaboradas con ingredientes frescos, tradición italiana y 20 años de experiencia preparando
       pizzas.
     </p>
-    <p>Esperamos que las disfrutes.</p>
-    <h2>Nuestras Pizzas</h2>
-
-    <table>
-      <tbody id="pizza-menu-table">
+    <p class="has-text-centered">Esperamos que las disfrutes.</p>
+    <h2 class="has-text-centered">Nuestras Pizzas</h2>
+    <table id="pizza-menu-table">
+      <tbody >
         <tr>
           <td>Americana</td>
           <td>8,50€</td>
@@ -69,7 +68,7 @@
         </tr>
       </tbody>
     </table>
-    <h2>Bebidas</h2>
+    <h2 class="has-text-centered">Bebidas</h2>
     <table id="beverages-menu-table">
       <tbody>
         <tr>
@@ -102,6 +101,11 @@
 </template>
 
 <style scoped>
+#pizza-menu-table {
+    width: max-content;
+    margin: 0 auto;
+}
+
 #pizza-menu-table td {
     text-align: left;
 }
@@ -116,5 +120,14 @@
 
 #beverages-menu-table tr td:nth-child(1) {
     font-weight: bold;
+}
+
+.p--intro {
+    text-align: center;
+    font-style: italic;
+    font-size: 1.2rem;
+    color: green;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 1px #ccc;
 }
 </style>
