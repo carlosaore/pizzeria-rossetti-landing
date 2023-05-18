@@ -5,16 +5,20 @@ import Footer from "./components/Footer.vue";
 import FacebookIcon from "./components/FacebookIcon.vue";
 import Carta from "./components/Carta.vue";
 import NuestraEsencia from "./components/NuestraEsencia.vue";
-import ContactForm from "./components/ContactForm.vue";
+import Contact from "./components/Contact.vue";
 
 const currentPage = ref("home");
 
 const menuIsActive = ref(false);
 
-const changePage = (page) => {
+const goTo = (page) => {
   currentPage.value = page;
-  console.log(currentPage.value);
 };
+
+const handleMenuClick = (page) => {
+  goTo(page);
+  menuIsActive.value = false;
+}
 
 const redirectToFacebook = () => {
   const url = "https://www.facebook.com/pizzeriarossetti?mibextid=ZbWKwL";
@@ -31,7 +35,7 @@ const redirectToGlovo = () => {
   <div id="root-content">
     <nav aria-label="main navigation" class="navbar is-fixed-top" role="navigation">
       <div class="navbar-brand">
-        <a class="navbar-item" @click="changePage('home')">
+        <a class="navbar-item" @click="goTo('home')">
           <img
             alt="Pizzeria Rossetti Manises"
             src="http://pizzeriarossettimanises.com/wp-content/uploads/2019/04/Logotiporossetti_Mesa-de-trabajo-1.jpg"
@@ -58,9 +62,9 @@ const redirectToGlovo = () => {
               <FacebookIcon />
             </span>
           </a>
-          <a class="navbar-item" @click="changePage('carta')"> Carta </a>
-          <a class="navbar-item" @click="changePage('nuestra-esencia')"> Nuestra esencia </a>
-          <a class="navbar-item" @click="changePage('contacto')"> Contacto </a>
+          <a class="navbar-item" @click="handleMenuClick('carta')">Carta</a>
+          <a class="navbar-item" @click="handleMenuClick('nuestra-esencia')">Nuestra esencia</a>
+          <a class="navbar-item" @click="handleMenuClick('contacto')">Contacto</a>
         </div>
         <div class="navbar-end">
           <div class="navbar-item">
@@ -74,10 +78,10 @@ const redirectToGlovo = () => {
       </div>
     </nav>
     <div class="content current-page">
-      <Home v-if="currentPage === 'home'" />
+      <Home v-if="currentPage === 'home'" @go-to="goTo"/>
       <Carta v-if="currentPage === 'carta'" />
       <NuestraEsencia v-if="currentPage === 'nuestra-esencia'" />
-      <ContactForm v-if="currentPage === 'contacto'" />
+      <Contact v-if="currentPage === 'contacto'" />
     </div>
     <Footer />
   </div>

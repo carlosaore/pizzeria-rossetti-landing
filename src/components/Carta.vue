@@ -1,104 +1,91 @@
 <script setup></script>
 
 <template>
-  <div class="content p-6 has-text-centered">
+  <div class="content p-6">
     <h1>Nuestra carta</h1>
     <p>
       Nuestras pizzas son elaboradas con ingredientes frescos, tradición italiana y 20 años de experiencia preparando
       pizzas.
     </p>
     <p>Esperamos que las disfrutes.</p>
-    <h2>Pizzas</h2>
+    <h2>Nuestras Pizzas</h2>
 
     <table>
-      <thead>
-        <tr>
-          <th></th>
-          <th></th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
+      <tbody id="pizza-menu-table">
         <tr>
           <td>Americana</td>
           <td>8,50€</td>
-          <td>Ingredientes: Tomate, mozzarella, bacon y huevo</td>
+          <td>Tomate, mozzarella, bacon y huevo</td>
         </tr>
         <tr>
           <td>Capricciosa</td>
           <td>9,50€</td>
-          <td>Ingredientes: Tomate, mozzarella, alcachofas, york, champiñones y olivas</td>
+          <td>Tomate, mozzarella, alcachofas, york, champiñones y olivas</td>
         </tr>
         <tr>
           <td>Corleone</td>
           <td>9,50€</td>
-          <td>Ingredientes: Tomate, mozzarella, chorizo, salami, pimiento, huevo y picante</td>
+          <td>Tomate, mozzarella, chorizo, salami, pimiento, huevo y picante</td>
         </tr>
         <tr>
           <td>Cosa Nostra</td>
           <td>9,50€</td>
-          <td>Ingredientes: Tomate, mozzarella, pepperoni, bacon y cebolla</td>
+          <td>Tomate, mozzarella, pepperoni, bacon y cebolla</td>
         </tr>
         <tr>
           <td>Deliziosa</td>
           <td>9,50€</td>
-          <td>Ingredientes: Tomate, mozzarella, roquefort, emental, carne, cebolla, huevo y parmesano</td>
+          <td>Tomate, mozzarella, roquefort, emental, carne, cebolla, huevo y parmesano</td>
         </tr>
         <tr>
           <td>Margarita</td>
           <td>6,50€</td>
-          <td>Ingredientes: Tomate, mozzarella, oregano</td>
+          <td>Tomate, mozzarella, oregano</td>
         </tr>
         <tr>
           <td>Pompei</td>
           <td>9,50€</td>
-          <td>Ingredientes: Tomate, mozzarella, york, salami, champiñones y olivas</td>
+          <td>Tomate, mozzarella, york, salami, champiñones y olivas</td>
         </tr>
         <tr>
           <td>Quattro stagioni</td>
           <td>9,50€</td>
-          <td>Ingredientes: Tomate, mozzarella, atun, alcachofas, york y champiñones</td>
+          <td>Tomate, mozzarella, atun, alcachofas, york y champiñones</td>
         </tr>
         <tr>
           <td>Tentazione</td>
           <td>9,50€</td>
-          <td>Ingredientes: Tomate, mozzarella, york, berenjenas, salami y champiñones</td>
+          <td>Tomate, mozzarella, york, berenjenas, salami y champiñones</td>
         </tr>
         <tr>
           <td>Tricolore</td>
           <td>8,90€</td>
-          <td>Ingredientes: Tomate, mozzarella, carne picada y pimiento</td>
+          <td>Tomate, mozzarella, carne picada y pimiento</td>
         </tr>
         <tr>
           <td>Vegetariana</td>
           <td>9,50€</td>
-          <td>Ingredientes: Tomate, mozzarella, berenjena, cebolla, alcachofa, pimiento y olivas</td>
+          <td>Tomate, mozzarella, berenjena, cebolla, alcachofa, pimiento y olivas</td>
         </tr>
       </tbody>
     </table>
     <h2>Bebidas</h2>
-    <table>
-      <thead>
-        <tr>
-          <th></th>
-          <th></th>
-        </tr>
-      </thead>
+    <table id="beverages-menu-table">
       <tbody>
         <tr>
-          <td>Lata de Cocacola, Fanta limón o naranja</td>
+          <td>Coca-Cola, Fanta limón o Naranja (lata)</td>
           <td>1,50€</td>
         </tr>
         <tr>
-          <td>Botella 2L de Coca-cola</td>
+          <td>Botella 2L de Coca-Cola</td>
           <td>2,90€</td>
         </tr>
         <tr>
-          <td>Lata de Cerveza</td>
+          <td>Cerveza (lata)</td>
           <td>1,50€</td>
         </tr>
         <tr>
-          <td>Cerveza (1Litro)</td>
+          <td>Cerveza (1 Litro)</td>
           <td>2,50€</td>
         </tr>
         <tr>
@@ -106,10 +93,28 @@
           <td>8,50€</td>
         </tr>
         <tr>
-          <td>Agua 1,5Litros</td>
+          <td>Agua 1,5 litros</td>
           <td>1,50€</td>
         </tr>
       </tbody>
     </table>
   </div>
 </template>
+
+<style scoped>
+#pizza-menu-table td {
+    text-align: left;
+}
+
+#pizza-menu-table tr td:nth-child(1) {
+    font-weight: bold;
+}
+
+#beverages-menu-table td {
+    text-align: left;
+}
+
+#beverages-menu-table tr td:nth-child(1) {
+    font-weight: bold;
+}
+</style>

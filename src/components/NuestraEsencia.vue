@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <div class="content p-6 has-text-centered">
+  <div class="content p-6">
     <h1>Nuestra historia</h1>
     <p>
       Nuestra historia comienza hace más de 20 años, cuando Giovanni, un chef apasionado que creció en Nápoles, decidió

@@ -2,6 +2,8 @@
 import { ref } from "vue";
 import PizzaCard from "./PizzaCard.vue";
 
+const emits = defineEmits(["go-to"])
+
 const isModalActive = ref(false);
 const selectedPizza = ref({
   src: "src/assets/quattro-formaggi.jpg",
@@ -100,7 +102,7 @@ const closeModal = () => {
           </div>
         </div>
       </div>
-      <button class="button" @click="handleClickButton('margarita')">Consulta nuestra carta</button>
+      <button class="button" @click="emits('go-to', 'carta')">Consulta nuestra carta</button>
     </div>
   </div>
   <div :class="{ 'is-active': isModalActive }" class="modal">
